@@ -13,11 +13,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/navigation"
-        app:itemBackground="@color/color_primary"
+        app:itemBackground="@color/mamori_priamry"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:menu="@menu/botton_nav_menu"
         android:fitsSystemWindows="false"/>
+
+    <WebView
+        android:id="@+id/webViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/navigation"/>
 
     <fragment
         android:id="@+id/nav_host_fragment_activity_guest"
