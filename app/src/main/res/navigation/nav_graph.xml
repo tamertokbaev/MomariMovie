@@ -22,7 +22,7 @@
         android:id="@+id/navigation_books"
         android:name="com.tamertokbaev.momari.MyBooksFragment"
         android:label="fragment_my_books"
-        tools:layout="@layout/fragment_my_books">
+        tools:layout="@layout/fragment_catalog">
         <action
             android:id="@+id/action_book_inner"
             app:destination="@id/navigation_book_inner"
@@ -35,7 +35,7 @@
         android:id="@+id/navigation_home"
         android:name="com.tamertokbaev.momari.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_catalog" >
         <action
             android:id="@+id/action_home_card"
             app:destination="@id/navigation_home_card"
@@ -48,7 +48,7 @@
         android:id="@+id/navigation_checkout"
         android:name="com.tamertokbaev.momari.CheckoutFragment"
         android:label="fragment_checkout"
-        tools:layout="@layout/fragment_checkout" >
+        tools:layout="@layout/fragment_catalog" >
         <action
             android:id="@+id/action_book_inner"
             app:destination="@id/navigation_book_inner"

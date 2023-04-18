@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/navigation_catalog"
-        android:icon="@drawable/ic_cart"
-        android:title="Catalog"/>
+        android:icon="@drawable/ic_home"
+        android:title="Home"/>
     <item
         android:id="@+id/navigation_books"
-        android:icon="@drawable/ic_books"
-        android:title="My books"/>
+        android:icon="@drawable/ic_home"
+        android:title="Playlists"/>
+
+    <item
+        android:id="@+id/navigation_checkout"
+        android:icon="@drawable/ic_home"
+        android:title="Favorites"/>
 
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
-        android:title="Home"/>
-
-    <item
-        android:id="@+id/navigation_checkout"
-        android:icon="@drawable/ic_checkout"
-        android:title="Checkout"/>
+        android:title="Profile"/>
 </menu>
