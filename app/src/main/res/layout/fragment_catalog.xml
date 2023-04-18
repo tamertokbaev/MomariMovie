@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundGray">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/catalog_header_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <LinearLayout
+                android:id="@+id/catalog_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/TextHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/catalog_header" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/search_catalog_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/catalog_header_constraint"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="16dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <EditText
+                    android:id="@+id/search_catalog_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_input"
+                    android:backgroundTint="@color/white"
+                    android:hint="Search books..."
+                    android:padding="15dp"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:inputType="text"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="10dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/search_catalog_main">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/catalog_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="0dp"/>
+        </ScrollView>
+        <TextView
+            android:id="@+id/catalog_search_empty"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="Nothing found"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_catalog_main" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

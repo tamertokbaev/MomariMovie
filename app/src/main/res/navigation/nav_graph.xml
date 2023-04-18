@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_catalog">
+
+    <fragment
+        android:id="@+id/navigation_catalog"
+        android:name="com.tamertokbaev.momari.CatalogFragment"
+        android:label="fragment_catalog"
+        tools:layout="@layout/fragment_catalog">
+        <action
+            android:id="@+id/action_book_inner"
+            app:destination="@id/navigation_book_inner"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_books"
+        android:name="com.tamertokbaev.momari.MyBooksFragment"
+        android:label="fragment_my_books"
+        tools:layout="@layout/fragment_my_books">
+        <action
+            android:id="@+id/action_book_inner"
+            app:destination="@id/navigation_book_inner"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.tamertokbaev.momari.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_card"
+            app:destination="@id/navigation_home_card"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_checkout"
+        android:name="com.tamertokbaev.momari.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_book_inner"
+            app:destination="@id/navigation_book_inner"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_book_item"
+        android:name="com.tamertokbaev.momari.BookItemFragment"
+        android:label="fragment_book_item"
+        tools:layout="@layout/fragment_book_item">
+<!--        <action-->
+<!--            android:id="@+id/action_book_more"-->
+<!--            app:destination="@id/navigation_book_inner"/>-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_book_inner"
+        android:name="com.tamertokbaev.momari.BookInnerFragment"
+        android:label="fragment_book_inner"
+        tools:layout="@layout/fragment_book_inner" />
+
+    <fragment
+        android:id="@+id/navigation_home_card"
+        android:name="com.tamertokbaev.momari.HomeMyCardFragment"
+        android:label="fragment_home_my_card"
+        tools:layout="@layout/fragment_my_card" />
+
+</navigation>
