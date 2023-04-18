@@ -6,82 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundGray">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <WebView
+        android:id="@+id/webViewHome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".CatalogHome">
-
-        <LinearLayout
-            android:id="@+id/home_account"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
-            <fragment
-                android:id="@+id/home"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:name="com.tamertokbaev.momari.HomeAccountFragment" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/home_preferences_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Preferences"
-            app:layout_constraintTop_toBottomOf="@+id/home_account"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="25dp"
-            android:layout_marginStart="16dp"
-            style="@style/TextHeader" />
-        <LinearLayout
-            android:id="@+id/home_add_card_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/home_preferences_text"
-            android:orientation="horizontal"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="10dp">
-            <Button
-                android:id="@+id/home_add_card_button"
-                style="@style/AccountButton"
-                android:backgroundTint="#0000CD"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:drawableEnd="@drawable/ic_credit"
-                android:drawableTint="@color/white"
-                android:text="@string/home_add_card"
-                />
-        </LinearLayout>
-        <fragment
-            android:id="@+id/home_account_info_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:name="com.tamertokbaev.momari.HomeInfoFragment"
-            app:layout_constraintTop_toBottomOf="@id/home_add_card_container"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="10dp" />
-
-        <LinearLayout
-            android:id="@+id/home_sign_out"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/home_account_info_fragment"
-            android:orientation="horizontal"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="10dp">
-            <Button
-                android:id="@+id/home_sign_out_button"
-                style="@style/AccountButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:drawableEnd="@drawable/ic_leave"
-                android:text="@string/home_account_sign_out"
-                android:onClick="signOut" />
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"/>
 </androidx.core.widget.NestedScrollView>

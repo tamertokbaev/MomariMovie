@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.Navigation
+import android.webkit.WebView
+import android.webkit.WebViewClient
 
 class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,9 +23,19 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var attachCardButton = view.findViewById<Button>(R.id.home_add_card_button);
-        attachCardButton.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.navigation_home_card);
-        }
+        super.onViewCreated(view, savedInstanceState)
+        val webView = view.findViewById<WebView>(R.id.webViewHome)
+        // WebViewClient allows you to handle
+        // onPageFinished and override Url loading.
+        webView.webViewClient = WebViewClient()
+
+        // this will load the url of the website
+        webView.loadUrl("https://10.0.0.2:3000/")
+
+        // this will enable the javascript settings, it can also allow xss vulnerabilities
+        webView.settings.javaScriptEnabled = true
+
+        // if you want to enable zoom feature
+        webView.settings.setSupportZoom(true)
     }
 }
