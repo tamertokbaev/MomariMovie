@@ -3,6 +3,7 @@ package com.tamertokbaev.momari.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -16,7 +17,7 @@ import com.tamertokbaev.momari.R
 import com.tamertokbaev.momari.globals.Constants
 
 
-class HomeActivity : AppCompatActivity(){
+class HomeActivity : AppCompatActivity() {
     private lateinit var webView: WebView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,16 @@ class HomeActivity : AppCompatActivity(){
         val navController = findNavController(findViewById(R.id.nav_host_fragment_activity_guest))
 
         navigationView.setupWithNavController(navController)
-
+//        navigationView.setOnNavigationItemSelectedListener { item ->
+//            when(item.itemId) {
+//                R.id.fragment_home -> {
+//                    Log.d("Navigation listener", "Navigating to new page!!!")
+//                    navController.navigate(R.id.fragment_home)
+//                    true
+//                }
+//                else -> false
+//            }
+//        }
         val preferences = getSharedPreferences(Constants.APP_SHARED_PREF_NAME, Context.MODE_PRIVATE)
         val bearerToken = preferences.getString(Constants.APP_SHARED_USER_TOKEN_KEY, "")
 
@@ -46,10 +56,6 @@ class HomeActivity : AppCompatActivity(){
 
         // if you want to enable zoom feature
         webView.settings.setSupportZoom(true)
-    }
-
-    fun getWebView(): WebView {
-        return webView
     }
 
     fun signOut(view: View) {
