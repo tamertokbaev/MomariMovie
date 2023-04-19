@@ -1,14 +1,17 @@
 package com.tamertokbaev.momari
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import com.tamertokbaev.momari.activities.HomeActivity
 
 class HomeFragment : Fragment() {
+    private lateinit var webView: WebView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -24,18 +27,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val webView = view.findViewById<WebView>(R.id.webViewHome)
-        // WebViewClient allows you to handle
-        // onPageFinished and override Url loading.
-        webView.webViewClient = WebViewClient()
 
-        // this will load the url of the website
-        webView.loadUrl("https://10.0.0.2:3000/")
-
-        // this will enable the javascript settings, it can also allow xss vulnerabilities
-        webView.settings.javaScriptEnabled = true
-
-        // if you want to enable zoom feature
-        webView.settings.setSupportZoom(true)
+//        webView.loadUrl("http://10.0.2.2:3000/popular")
     }
 }

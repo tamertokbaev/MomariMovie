@@ -13,7 +13,6 @@ class MyJsInterface(private val mContext: Context, private val token: String) {
 
     @JavascriptInterface
     fun getToken(): String {
-        Toast.makeText(mContext, "Toast from android", Toast.LENGTH_SHORT).show()
         return token
     }
 }
