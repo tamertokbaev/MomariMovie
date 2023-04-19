@@ -8,6 +8,7 @@ import android.view.View
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -28,20 +29,36 @@ class HomeActivity : AppCompatActivity() {
         val navController = findNavController(findViewById(R.id.nav_host_fragment_activity_guest))
 
         navigationView.setupWithNavController(navController)
-//        navigationView.setOnNavigationItemSelectedListener { item ->
-//            when(item.itemId) {
-//                R.id.fragment_home -> {
-//                    Log.d("Navigation listener", "Navigating to new page!!!")
-//                    navController.navigate(R.id.fragment_home)
-//                    true
-//                }
-//                else -> false
-//            }
-//        }
+        navigationView.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.navigation_home -> {
+//                    Toast.makeText(this, webView.toString(), Toast.LENGTH_SHORT).show()
+                    webView?.loadUrl("http://10.0.2.2:3000/profile")
+                    navController.navigate(R.id.navigation_home)
+                    true
+                }
+                R.id.navigation_catalog -> {
+                    webView?.loadUrl("http://10.0.2.2:3000")
+                    navController.navigate(R.id.navigation_catalog)
+                    true
+                }
+                R.id.navigation_checkout -> {
+                    webView?.loadUrl("http://10.0.2.2:3000/playlists")
+                    navController.navigate(R.id.navigation_checkout)
+                    true
+                }
+                R.id.navigation_books -> {
+                    webView?.loadUrl("http://10.0.2.2:3000/last-released")
+                    navController.navigate(R.id.navigation_books)
+                    true
+                }
+                else -> false
+            }
+        }
         val preferences = getSharedPreferences(Constants.APP_SHARED_PREF_NAME, Context.MODE_PRIVATE)
         val bearerToken = preferences.getString(Constants.APP_SHARED_USER_TOKEN_KEY, "")
 
-        val webView = findViewById<WebView>(R.id.webViewMain)
+        webView = findViewById<WebView>(R.id.webViewMain)
         // WebViewClient allows you to handle
         // onPageFinished and override Url loading.
         webView.webViewClient = WebViewClient()
