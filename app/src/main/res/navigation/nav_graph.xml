@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_checkout"
-        android:name="com.tamertokbaev.momari.CheckoutFragment"
+        android:name="com.tamertokbaev.momari.PlaylistsFragment"
         android:label="fragment_checkout"
         tools:layout="@layout/fragment_home" >
     </fragment>
