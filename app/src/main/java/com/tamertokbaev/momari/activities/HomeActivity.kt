@@ -75,6 +75,15 @@ class HomeActivity : AppCompatActivity() {
         webView.settings.setSupportZoom(true)
     }
 
+    override fun onBackPressed() {
+        // If the WebView can go back, go back; otherwise, exit the activity
+        if (webView.canGoBack()) {
+            webView.goBack()
+        } else {
+            super.onBackPressed()
+        }
+    }
+
     fun signOut(view: View) {
         val intent = Intent(this, SignInActivity::class.java)
         startActivity(intent)
